@@ -80,6 +80,17 @@ public class HomekeyInterception extends CordovaPlugin {
             if (action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)) {
                 String reason = intent.getStringExtra(SYSTEM_REASON);
                 if (SYSTEM_HOME_KEY.equals(reason)) {
+                    // 重新跳转到应用
+                    for(int j = 0; j < 10; j++) {
+                        Intent selfIntent = new Intent(context, getActivity().getClass());
+                        selfIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, selfIntent, 0);
+                        try {
+                            pendingIntent.send();
+                        } catch (PendingIntent.CanceledException e) {
+                            // e.printStackTrace();
+                        }
+                    }
                 }
             }
         }

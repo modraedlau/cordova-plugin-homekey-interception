@@ -30,3 +30,12 @@ export class HomePage {
   }
 }
 ```
+### build
+add android platform
+```
+ionic cordova platform add android
+```
+build android
+```
+ionic cordova build android
+```
