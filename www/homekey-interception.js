@@ -2,7 +2,7 @@ var exec = require('cordova/exec');
 
 var PLUGIN_NAME = 'HomekeyInterception';
 
-var CilicoScanner = {
+var HomekeyInterception = {
     register: function (cb) {
         return new Promise(function (resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, 'register', []);
