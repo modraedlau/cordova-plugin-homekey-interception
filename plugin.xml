@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-homekey-interception" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>Cordova Homekey Interception Plugin</name>
+    <author>ModraedLau</author>
+    <license>MIT</license>
+    <keywords>cordova, plugin, homekey, interception</keywords>
+
+    <js-module name="HomekeyInterception" src="www/homekey-interception.js">
+        <clobbers target="cordova.plugins.HomekeyInterception"/>
+    </js-module>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="HomekeyInterception">
+                <param name="android-package" value="com.vsdata.cordova.plugin.HomekeyInterception"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/com/vsdata/cordova/plugin/HomekeyInterception.java"
+                     target-dir="src/com/vsdata/cordova/plugin"/>
+    </platform>
+</plugin>

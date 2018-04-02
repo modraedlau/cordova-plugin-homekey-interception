@@ -1,0 +1,11 @@
+{
+    "name": "cordova-plugin-homekey-interception",
+    "version": "1.0.0",
+    "cordova": {
+      "id": "cordova-plugin-homekey-interception",
+      "platforms": [
+        "android"
+      ]
+    },
+    "description": "Cordova Homekey Interception Plugin"
+  }
